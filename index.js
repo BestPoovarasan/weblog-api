@@ -11,6 +11,9 @@ const multer = require("multer");
 const path = require("path");
 dotenv.config();
 
+app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "/images")));
+
 // TEST HOMEPAGE------------------------>
 app.get("/", (req, res) => {
   res.send("THIS IS API......!!!");
